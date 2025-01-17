@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <title>Carrito - Bethel Cel</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-900 text-white">
+    <header class="bg-black p-10 text-center relative"
+        style="background-image: url('imagenes/iph.webp'); background-size: cover; background-position: center;">
+        <h1 class="text-6xl font-bebas text-red-500 font-bold ">
+            <i class="fas fa-shopping-cart"></i> BETHEL CEL - MOVIL
+        </h1>
+    </header>
+    <br>
+    <a href="productos.html" class="block text-3xl font-bold text-white hover:text-red-500 underline text-center">
+        Añadir Más Productos
+    </a>
+    <main class="container mx-auto py-16">
+        <h2 class="text-center text-4xl font-bebas text-red-500 mb-8">Tu Carrito</h2>
+        <ul id="lista-carrito" class="space-y-4"></ul>
+        <div class="text-right mt-4">
+            <h3 id="total-carrito" class="text-2xl font-bold text-red-500"></h3>
+        </div>
+        <button id="vaciar-carrito" class="mt-8 bg-red-600 py-2 px-4 rounded-md hover:bg-red-700 text">
+            Vaciar Carrito
+        </button>
+    </main>
+
+    <!--Modal-->
+    <div id="mensaje-modal" class="hidden fixed inset-0 bg-black bg-opacity-75 flex justify-center items-center z-50">
+        <div class="bg-black text-white p-6 rounded-lg shadow-lg max-w-md w-full border-2 border-red-500">
+            <h3 class="text-xl font-bold mb-4 text-red-500">¡Compra realizada!</h3>
+            <p id="mensaje-confirmacion" class="mb-4"></p>
+            <button id="cerrar-modal"
+                class="bg-red-600 text-white px-4 py-2 rounded hover:bg-red-700 border border-red-700">
+                Cerrar
+            </button>
+        </div>
+    </div>
+
+    <main class="container mx-auto py-16">
+        <section class="bg-cover bg-center p-8" style="background-image: url('imagenes/Lupa.png');">
+            <div class="bg-black bg-opacity-75 p-8 rounded-lg max-w-2xl mx-auto">
+                <h2 class="text-4xl font-bebas text-red-500 mb-6 text-center">Informacion de Compra</h2>
+                <form id="formulario-compra" class="space-y-6">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <input type="text" id="nombre" placeholder="Nombre" required
+                            class="w-full p-3 bg-black text-white border-2 border-red-500 rounded-md focus:outline-none focus:ring-2 focus:ring-red-500">
+                        <input type="text" id="telefono" placeholder="Teléfono" required
+                            class="w-full p-3 bg-black text-white border-2 border-red-500 rounded-md focus:outline-none focus:ring-2 focus:ring-red-500">
+                    </div>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <input type="text" id="direccion" placeholder="Dirección" required
+                            class="w-full p-3 bg-black text-white border-2 border-red-500 rounded-md focus:outline-none focus:ring-2 focus:ring-red-500">
+                        <input type="email" id="correo" placeholder="Correo" required
+                            class="w-full p-3 bg-black text-white border-2 border-red-500 rounded-md focus:outline-none focus:ring-2 focus:ring-red-500">
+                    </div>
+                    <div class="text-center space-x-4">
+                        <button type="submit"
+                            class="bg-red-600 text-white px-6 py-2 rounded-md hover:bg-red-700">Comprar</button>
+                        <button type="button" id="limpiar-formulario"
+                            class="bg-gray-600 text-white px-6 py-2 rounded-md hover:bg-gray-700">
+                            Limpiar
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            cargarCarrito();
+
+            document.getElementById('vaciar-carrito').addEventListener('click', () => {
+                localStorage.removeItem('carrito');
+                cargarCarrito();
+                mostrarModal('El carrito ha sido vaciado.');
+            });
+
+            const formulario = document.getElementById('formulario-compra');
+            const botonLimpiar = document.getElementById('limpiar-formulario');
+
+            //Evento limpiar for//
+            botonLimpiar.addEventListener('click', () => {
+                formulario.reset();
+            });
+
+            //Val cálculo del total//
+            formulario.addEventListener('submit', function (e) {
+                e.preventDefault();
+
+                const nombre = document.getElementById('nombre').value.trim();
+                const telefono = document.getElementById('telefono').value.trim();
+                const direccion = document.getElementById('direccion').value.trim();
+                const correo = document.getElementById('correo').value.trim();
+
+                if (!nombre || !telefono || !direccion || !correo) {
+                    mostrarModal('Por favor, completa todos los campos obligatorios.');
+                    return;
+                }
+
+                const carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+                const total = carrito.reduce((acc, producto) => acc + (producto.precio * producto.cantidad), 0);
+
+                mostrarModal(`Gracias por tu compra, ${nombre}.<br>
+Teléfono: ${telefono}<br>
+Dirección: ${direccion}<br>
+Correo: ${correo}<br>
+Total a pagar: $${total.toFixed(2)}`);
+            });
+
+            //mostrarmodal//
+            function mostrarModal(mensaje) {
+                const modal = document.getElementById('mensaje-modal');
+                const mensajeConfirmacion = document.getElementById('mensaje-confirmacion');
+                mensajeConfirmacion.innerHTML = mensaje;
+                modal.classList.remove('hidden');
+
+                document.getElementById('cerrar-modal').addEventListener('click', () => {
+                    modal.classList.add('hidden');
+                });
+            }
+        });
+
+        function cargarCarrito() {
+            const carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+            const listaCarrito = document.getElementById('lista-carrito');
+            const totalDisplay = document.getElementById('total-carrito');
+
+            listaCarrito.innerHTML = '';
+            let total = 0;
+
+            carrito.forEach(producto => {
+                const li = document.createElement('li');
+                li.classList.add('flex', 'justify-between', 'items-center', 'bg-black', 'p-4', 'rounded-md', 'shadow-md');
+
+                li.innerHTML = `
+                    <span>${producto.nombre} (x${producto.cantidad})</span>
+                    <span>$${(producto.precio * producto.cantidad).toFixed(2)}</span>
+                    <button class="bg-red-600 py-1 px-2 rounded-md hover:bg-red-700 text-white eliminar-item" data-id="${producto.id}">
+                        Eliminar
+                    </button>
+                `;
+
+                listaCarrito.appendChild(li);
+                total += producto.precio * producto.cantidad;
+            });
+
+            totalDisplay.textContent = `Total: $${total.toFixed(2)}`;
+
+            document.querySelectorAll('.eliminar-item').forEach(boton => {
+                boton.addEventListener('click', eliminarProducto);
+            });
+        }
+
+        function eliminarProducto(e) {
+            const id = e.target.dataset.id;
+            let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+            carrito = carrito.filter(producto => producto.id !== id);
+            localStorage.setItem('carrito', JSON.stringify(carrito));
+            cargarCarrito();
+        }
+    </script>
+    <footer class="footer bg-gray-800 text-white py-4">
+        <div class="container mx-auto text-center">
+            <div class="row">
+                <div class="col-md-4">
+                    <p><strong>Dirección:</strong> Av. Quitumbe Ñan y Julio Andrade</p>
+                    <p><strong>Teléfonos:</strong> 0991774718 - 0961326585</p>
+                </div>
+                <div class="col-md-4">
+                    <p><strong>Correo Electrónico:</strong> BethelCel96@gmail.com</p>
+                    <p><strong>Horario de Atención:</strong> Lunes a Viernes 8:00 AM - 20:00 PM</p>
+                </div>
+                <div class="col-md-4">
+                    <p><strong>Contato Directo:</strong>
+                        <a href="https://wa.me/+593991774718" class="link text-white">WhatsApp</a>
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </footer>
+    <!--F-->
+    <footer class="bg-black text-white py-6">
+        <div class="container mx-auto text-center">
+            <p> "Tecnología que funciona, confianza que dura Bethel Cel."</p>
+        </div>
+    </footer>
+</body>
+
+</html>

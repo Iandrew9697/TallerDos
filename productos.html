@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <title>Segunda Página - Bethel Cel</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
@@ -16,17 +17,29 @@
 </head>
 
 <body class="bg-gray-900 text-white">
-    
+
     <header class="bg-black">
+        
         <div class="container mx-auto flex justify-between items-center p-6">
             <a href="proyecto.html" class="text-3xl font-bebas text-red-500">Bethel Cel</a>
             <nav>
                 <ul class="flex flex-col md:flex-row md:space-x-6">
                     <li><a href="index.html" class="text-xl md:text-2xl text-white hover:text-red-500">Inicio</a></li>
-                    <li><a href="#nuestros-servicios" class="text-xl md:text-2xl text-white hover:text-red-500">Nuestros Servicios</a></li>
-                    <li><a href="#servicios-adicionales" class="text-xl md:text-2xl text-white hover:text-red-500">Servicios Adicionales</a></li>
-                    <li><a href="#accesorios-repuestos" class="text-xl md:text-2xl text-white hover:text-red-500">Accesorios / Repuestos</a></li>
-                    <li><a href="#destacados" class="text-xl md:text-2xl text-white hover:text-red-500">Destacados</a></li>
+                    <li><a href="#nuestros-servicios" class="text-xl md:text-2xl text-white hover:text-red-500">Nuestros
+                            Servicios</a></li>
+                    <li><a href="#servicios-adicionales"
+                            class="text-xl md:text-2xl text-white hover:text-red-500">Servicios Adicionales</a></li>
+                    <li><a href="#accesorios-repuestos"
+                            class="text-xl md:text-2xl text-white hover:text-red-500">Accesorios / Repuestos</a></li>
+                    <li><a href="#destacados" class="text-xl md:text-2xl text-white hover:text-red-500">Destacados</a>
+                    </li>
+                    <a href="carrito.html" class="relative flex items-center text-xl md:text-2xl text-white hover:text-red-500">
+                        <i class="fas fa-shopping-cart" style="font-size: 3rem;" ></i>
+                        <span id="carrito-count" class="absolute top-0 right-0 bg-red-500 text-white rounded-full px-2 py-1 text-sm">
+                            0
+                        </span>
+                    </a>
+                    </li>
                 </ul>
             </nav>
         </div>
@@ -56,14 +69,12 @@
                     <p class="text-gray-400">Diagnóstico y reparación de componentes dañados.</p>
                 </div>
                 <div class="bg-black p-6 rounded-lg shadow-lg text-center">
-                    <img src="imagenes/softwareAc.webp" alt="Servicio 2"
-                        class="w-full object-cover rounded-md mb-4">
+                    <img src="imagenes/softwareAc.webp" alt="Servicio 2" class="w-full object-cover rounded-md mb-4">
                     <h3 class="text-2xl font-bebas text-white mb-2">Actualización de Software</h3>
                     <p class="text-gray-400">Optimización y actualización del sistema operativo.</p>
                 </div>
                 <div class="bg-black p-6 rounded-lg shadow-lg text-center">
-                    <img src="imagenes/preventivo.webp" alt="Servicio 3"
-                        class="w-full object-cover rounded-md mb-4">
+                    <img src="imagenes/preventivo.webp" alt="Servicio 3" class="w-full object-cover rounded-md mb-4">
                     <h3 class="text-2xl font-bebas text-white mb-2">Mantenimiento Preventivo</h3>
                     <p class="text-gray-400">Limpieza interna y revisión completa de dispositivos.</p>
                 </div>
@@ -73,132 +84,132 @@
 
     <!--Productos-->
     <section id="servicios-adicionales" class="container mx-auto"></section>
-    <main class="container mx-auto py-16">
+    <main class="container mx-auto py-12">
         <h2 class="text-center text-5xl font-bebas text-red-500 mb-10">Servicios Adicionales</h2>
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div class="bg-black p-4 rounded-lg shadow-md">
-                <img src="imagenes/ventaRep.webp" alt="Producto 1"
-                    class="w-full object-cover rounded-md mb-4">
+            <div class="bg-black p-4 rounded-lg shadow-md" data-id="producto-1">
+                <img src="imagenes/ventaRep.webp" alt="Producto 1" class="w-full object-cover rounded-md mb-4">
                 <div>
-                    <h3 class="text-2xl font-bebas text-white">Venta de Repuestos al por mayor y menor</h3>
+                    <h3 class="text-2xl font-bebas text-white mb-9 ">Venta de Repuestos al por mayor y menor</h3>
                     <p class="text-gray-400">"Ofrecemos repuestos para celulares al por mayor y menor, incluyendo
                         pantallas, baterías, cámaras, botones, carcasas y más. Productos de alta calidad compatibles con
                         las principales marcas del mercado, ideales para técnicos y usuarios finales."</p>
                     <p class="text-red-500 font-bold mt-2">$100.00</p>
-                    <button class="mt-4 bg-red-600 text-white py-2 px-4 rounded-md hover:bg-red-700">
-                        Comprar
+                    <button class="mt-4 bg-red-600 text-white py-2 px-4 rounded-md hover:bg-red-700"
+                        data-id="producto-1" data-nombre="Venta de repuestos al por mayor y menor"
+                        data-precio="100.00">Comprar
                     </button>
                 </div>
             </div>
-            <div class="bg-black p-4 rounded-lg shadow-md">
-                <img src="imagenes/profeREP.webp" alt="Producto 2"
-                    class="w-full object-cover rounded-md mb-4">
+            <div class=" bg-black p-4 rounded-lg shadow-md" data-id="producto-2">
+                <img src="imagenes/profeREP.webp" alt="Producto 2" class="w-full object-cover rounded-md mb-4">
                 <div>
-                    <h3 class="text-2xl font-bebas text-white">Cursos de Reparacion Móvil</h3>
+                    <h3 class="text-2xl font-bebas text-white mb-4 ">Cursos de Reparacion Móvil</h3>
                     <p class="text-gray-400">"Capacitación práctica y teórica para aprender a diagnosticar y reparar
                         celulares de diversas marcas. Incluye módulos sobre cambio de pantallas, reemplazo de baterías,
                         reparación de circuitos y más. Ideal para principiantes y profesionales que buscan perfeccionar
                         sus habilidades."</p>
+                        
                     <p class="text-red-500 font-bold mt-2">$150.00</p>
-                    <button class="mt-4 bg-red-600 text-white py-2 px-4 rounded-md hover:bg-red-700">
-                        Comprar
+                    <button class="mt-4 bg-red-600 text-white py-2 px-4 rounded-md hover:bg-red-700"
+                        data-id="producto-2" data-nombre="Cursos de Reparacion Móvil" 
+                        data-precio="150.00">Comprar
                     </button>
                 </div>
             </div>
-            <div class="bg-black p-4 rounded-lg shadow-md">
-                <img src="imagenes/HERRAMI.webp" alt="Producto 3"
-                    class="w-full object-cover rounded-md mb-4">
+            <div class="bg-black p-4 rounded-lg shadow-md" data-id="producto-3">
+                <img src="imagenes/HERRAMI.webp" alt="Producto 3" class="w-full object-cover rounded-md mb-4">
                 <div>
-                    <h3 class="text-2xl font-bebas text-white">Kit de Herramientas para Servicio Tecnico</h3>
+                    <h3 class="text-2xl font-bebas text-white mb-9">Kit de Herramientas para Servicio Tecnico</h3>
                     <p class="text-gray-400">"Set completo de herramientas especializadas para reparar celulares,
                         incluye destornilladores de precisión, espátulas, pinzas, ventosas,pistola de calor y más.
                         Diseñado para facilitar el trabajo técnico en diferentes modelos y marcas."</p>
                     <p class="text-red-500 font-bold mt-2">$130.00</p>
-                    <button class="mt-4 bg-red-600 text-white py-2 px-4 rounded-md hover:bg-red-700">
-                        Comprar
+                    <button class="mt-4 bg-red-600 text-white py-2 px-4 rounded-md hover:bg-red-700"
+                        data-id="producto-3" data-nombre="Kit de Herramientas para Servicio Tecnico"
+                        data-precio="130.00">Comprar
                     </button>
                 </div>
             </div>
         </div>
     </main>
     <section id="accesorios-repuestos" class="container mx-auto"></section>
-    <main class="container mx-auto py-16">
+    <main class="container mx-auto py-12">
         <h2 class="text-center text-5xl font-bebas text-red-500 mb-10">Venta de Accesorios</h2>
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div class="bg-black p-4 rounded-lg shadow-md">
-                <img src="imagenes/ESCUDO.webp" alt="Producto 1"
-                    class="w-full object-cover rounded-md mb-4">
+            <div class="bg-black p-4 rounded-lg shadow-md" data-id="producto-4">
+                <img src="imagenes/ESCUDO.webp" alt="Producto 4" class="w-full object-cover rounded-md mb-4">
                 <div>
-                    <h3 class="text-2xl font-bebas text-white">Protectores de Pantalla</h3>
+                    <h3 class="text-2xl font-bebas text-white mb-6 ">Protectores de Pantalla</h3>
                     <p class="text-gray-400">"Protector de pantalla para celular. Disponible en vidrio templado y
                         material hidrogel. Alta resistencia y ajuste perfecto."</p>
                     <p class="text-red-500 font-bold mt-2">$7.00</p>
-                    <button class="mt-4 bg-red-600 text-white py-2 px-4 rounded-md hover:bg-red-700">
-                        Comprar
+                    <button class="mt-4 bg-red-600 text-white py-2 px-4 rounded-md hover:bg-red-700"
+                        data-id="producto-4" data-nombre="Protectores de Pantalla" 
+                        data-precio="7.00">Comprar
                     </button>
                 </div>
             </div>
-            <div class="bg-black p-4 rounded-lg shadow-md">
-                <img src="imagenes/estucheria.webp" alt="Producto 2"
-                    class="w-full object-cover rounded-md mb-4">
+            <div class="bg-black p-4 rounded-lg shadow-md" data-id="producto-5">
+                <img src="imagenes/estucheria.webp" alt="Producto 5" class="w-full object-cover rounded-md mb-4">
                 <div>
-                    <h3 class="text-2xl font-bebas text-white">Estuches para celular</h3>
+                    <h3 class="text-2xl font-bebas text-white mb-6 ">Estuches para celular</h3>
                     <p class="text-gray-400">"Estuches modernos y resistentes para proteger tu celular con estilo.
                         Disponibles en diversos diseños y colores."</p>
                     <p class="text-red-500 font-bold mt-2">$6.50</p>
-                    <button class="mt-4 bg-red-600 text-white py-2 px-4 rounded-md hover:bg-red-700">
+                    <button class="mt-4 bg-red-600 text-white py-2 px-4 rounded-md hover:bg-red-700"
+                        data-id="producto-5" data-nombre="Estuches para celular" data-precio="6.50">
                         Comprar
                     </button>
                 </div>
             </div>
-            <div class="bg-black p-4 rounded-lg shadow-md">
-                <img src="imagenes/portat" alt="Producto 3" class="w-full  object-cover rounded-md mb-4">
+            <div class="bg-black p-4 rounded-lg shadow-md" data-id="producto-6">
+                <img src="imagenes/portat" alt="Producto 6" class="w-full  object-cover rounded-md mb-4">
                 <div>
                     <h3 class="text-2xl font-bebas text-white">Power Banck / Baterias Portables</h3>
                     <p class="text-gray-400">"Cargadores portátiles compactos y eficientes, ideales para cargar
                         celulares en cualquier lugar, con diseños modernos y funciones como carga rápida y múltiples
                         puertos."</p>
                     <p class="text-red-500 font-bold mt-2">$25.00</p>
-                    <button class="mt-4 bg-red-600 text-white py-2 px-4 rounded-md hover:bg-red-700">
-                        Comprar
+                    <button class="mt-4 bg-red-600 text-white py-2 px-4 rounded-md hover:bg-red-700"
+                        data-id="producto-6" data-nombre="Power Banck / Baterias Portables" data-precio="25.00">Comprar
                     </button>
                 </div>
             </div>
         </div>
     </main>
-    <main class="container mx-auto py-16">
+    <main class="container mx-auto py-12">
         <h2 class="text-center text-5xl font-bebas text-red-500 mb-10">Tienda de Repuestos</h2>
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div class="bg-black p-4 rounded-lg shadow-md">
-                <img src="imagenes/A50.webp" alt="Producto 1" class="w-full object-cover rounded-md mb-4">
+            <div class="bg-black p-4 rounded-lg shadow-md" data-id="producto-7">
+                <img src="imagenes/A50.webp" alt="Producto 7" class="w-full object-cover rounded-md mb-4">
                 <div>
-                    <h3 class="text-2xl font-bebas text-white">DISPLAY A50</h3>
+                    <h3 class="text-2xl font-bebas text-white mb-4 ">DISPLAY A50 oled</h3>
                     <p class="text-gray-400">"Pantalla de repuesto de alta calidad para el Samsung Galaxy A50,
                         tecnología OLED para colores vibrantes y negros profundos. Incluye el marco preinstalado,
                         facilitando la instalación y asegurando un ajuste perfecto. Ideal para reemplazos rápidos y
                         profesionales."</p>
                     <p class="text-red-500 font-bold mt-2">$27.00</p>
-                    <button class="mt-4 bg-red-600 text-white py-2 px-4 rounded-md hover:bg-red-700">
-                        Comprar
+                    <button class="mt-4 bg-red-600 text-white py-2 px-4 rounded-md hover:bg-red-700"
+                        data-id="producto-7" data-nombre="DISPLAY A50 oled" data-precio="27.00">Comprar
                     </button>
                 </div>
             </div>
-            <div class="bg-black p-4 rounded-lg shadow-md">
-                <img src="imagenes/IPHONE 14.webp" alt="Producto 2"
-                    class="w-full object-cover rounded-md mb-4">
+            <div class="bg-black p-4 rounded-lg shadow-md" data-id="producto-8">
+                <img src="imagenes/IPHONE 14.webp" alt="Producto 8" class="w-full object-cover rounded-md mb-4">
                 <div>
-                    <h3 class="text-2xl font-bebas text-white">Display iPhone 14 P</h3>
+                    <h3 class="text-2xl font-bebas text-white mb-8">Display iPhone 14 P</h3>
                     <p class="text-gray-400">"Pantalla original de alta calidad para el iPhone 14, con tecnología OLED
                         Super Retina XDR que ofrece colores vibrantes, negros profundos y una resolución excepcional.
                         Compatible con Face ID y True Tone, ideal para reemplazos profesionales."</p>
                     <p class="text-red-500 font-bold mt-2">$75.00</p>
-                    <button class="mt-4 bg-red-600 text-white py-2 px-4 rounded-md hover:bg-red-700">
-                        Comprar
+                    <button class="mt-4 bg-red-600 text-white py-2 px-4 rounded-md hover:bg-red-700"
+                        data-id="producto-8" data-nombre="Display iPhone 14 P" data-precio="75.00">Comprar
                     </button>
                 </div>
             </div>
-            <div class="bg-black p-4 rounded-lg shadow-md">
-                <img src="imagenes/CAMON" alt="Producto 3" class="w-full object-cover rounded-md mb-4">
+            <div class="bg-black p-4 rounded-lg shadow-md" data-id="producto-9">
+                <img src="imagenes/CAMON" alt="Producto 9" class="w-full object-cover rounded-md mb-4">
                 <div>
                     <h3 class="text-2xl font-bebas text-white">Display Infinix Note 30 Pro</h3>
                     <p class="text-gray-400">"Pantalla de alta calidad para Infinix Note 30 Pro, con tecnología AMOLED
@@ -206,53 +217,54 @@
                         actualización rápida, ideal para una experiencia visual fluida. Perfecto para reemplazos
                         precisos y de calidad profesional."</p>
                     <p class="text-red-500 font-bold mt-2">$25.00</p>
-                    <button class="mt-4 bg-red-600 text-white py-2 px-4 rounded-md hover:bg-red-700">
-                        Comprar
+                    <button class="mt-4 bg-red-600 text-white py-2 px-4 rounded-md hover:bg-red-700"
+                        data-id="producto-9" data-nombre="Display Infinix Note 30 Pro" data-precio="25.00">Comprar
                     </button>
                 </div>
             </div>
         </div>
     </main>
-    <main class="container mx-auto py-16">
+    <main class="container mx-auto py-6">
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div class="bg-black p-4 rounded-lg shadow-md">
-                <img src="imagenes/infi.webp" alt="Producto 1" class="w-full object-cover rounded-md mb-4">
+            <div class="bg-black p-4 rounded-lg shadow-md" data-id="producto-10">
+                <img src="imagenes/infi.webp" alt="Producto 10" class="w-full object-cover rounded-md mb-32">
                 <div>
-                    <h3 class="text-2xl font-bebas text-white">Bateria Infinix note 12 /Camon 30</h3>
+                    <h3 class="text-3xl font-bebas text-white mb-6 ">Bateria Infinix note 12 /Camon 30</h3>
                     <p class="text-gray-400">"Batería de 5000 mAh, tipo Litio-Polímero (Li-Po), compatible con carga
                         rápida y diseñada para un rendimiento duradero. Ofrece protección contra sobrecalentamiento y
                         sobrecarga, ideal para un uso intensivo diario.."</p>
                     <p class="text-red-500 font-bold mt-2">$18.00</p>
-                    <button class="mt-4 bg-red-600 text-white py-2 px-4 rounded-md hover:bg-red-700">
-                        Comprar
+                    <button class="mt-4 bg-red-600 text-white py-2 px-4 rounded-md hover:bg-red-700"
+                        data-id="producto-10" data-nombre="Bateria Infinix note 12 /Camon 30"
+                        data-precio="18.00">Comprar
                     </button>
                 </div>
             </div>
-            <div class="bg-black p-4 rounded-lg shadow-md">
-                <img src="imagenes/placa" alt="Producto 2" class="w-full object-cover rounded-md mb-4">
+            <div class="bg-black p-4 rounded-lg shadow-md" data-id="producto-11">
+                <img src="imagenes/placa" alt="Producto 11" class="w-full object-cover rounded-md mb-4">
                 <div>
-                    <h3 class="text-2xl font-bebas text-white">Placas de carga</h3>
+                    <h3 class="text-3xl font-bebas text-white">Placas de carga</h3>
                     <p class="text-gray-400">"Placas de carga de alta calidad, compatibles con diversos modelos de
                         smartphones. Diseñadas para garantizar una transferencia de energía eficiente y segura, incluyen
                         protección contra sobrecalentamiento y cortocircuitos. Ideales para reemplazos rápidos y
                         duraderos."</p>
                     <p class="text-red-500 font-bold mt-2">$9.00</p>
-                    <button class="mt-4 bg-red-600 text-white py-2 px-4 rounded-md hover:bg-red-700">
-                        Comprar
+                    <button class="mt-4 bg-red-600 text-white py-2 px-4 rounded-md hover:bg-red-700"
+                        data-id="producto-11" data-nombre="Placas de carga" data-precio="9.00">Comprar
                     </button>
                 </div>
             </div>
-            <div class="bg-black p-4 rounded-lg shadow-md">
-                <img src="imagenes/lentes" alt="Producto 3" class="w-full object-cover rounded-md mb-4">
+            <div class="bg-black p-4 rounded-lg shadow-md" data-id="producto-12">
+                <img src="imagenes/lentes" alt="Producto 12" class="w-full object-cover rounded-md mb-4">
                 <div>
-                    <h3 class="text-2xl font-bebas text-white">Lentes de Camara-Varios</h3>
+                    <h3 class="text-3xl font-bebas text-white">Lentes de Camara-Varios</h3>
                     <p class="text-gray-400">"Lentes de cámara de repuesto compatibles con una amplia gama de modelos de
                         smartphones. Fabricados con materiales de alta calidad para garantizar claridad y durabilidad.
                         Ideales para restaurar la funcionalidad de la cámara trasera o delantera, con ajuste perfecto y
                         fácil instalación. Perfectos para reemplazos rápidos y confiables."</p>
                     <p class="text-red-500 font-bold mt-2">$5.00</p>
-                    <button class="mt-4 bg-red-600 text-white py-2 px-4 rounded-md hover:bg-red-700">
-                        Comprar
+                    <button class="mt-4 bg-red-600 text-white py-2 px-4 rounded-md hover:bg-red-700"
+                        data-id="producto-12" data-nombre="Lentes de Camara-Varios" data-precio="5.00">Comprar
                     </button>
                 </div>
             </div>
@@ -333,7 +345,7 @@
         let index = 0;
 
         function updateCarousel() {
-            //posiciónC
+            //posiciónCarr//
             carousel.style.transform = `translateX(-${index * 100}%)`;
         }
 
@@ -345,6 +357,57 @@
         prev.addEventListener('click', () => {
             index = (index - 1 + totalItems) % totalItems;
             updateCarousel();
+        });
+    </script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            //botones comprar//
+            document.querySelectorAll('button[data-id]').forEach(button => {
+                button.addEventListener('click', (e) => {
+                    const target = e.target;
+
+                    //SE CREA UN Producto con la información del botón//
+                    const producto = {
+                        id: target.getAttribute("data-id"),
+                        nombre: target.getAttribute("data-nombre"),
+                        precio: parseFloat(target.getAttribute("data-precio")),
+                        cantidad: 1
+                    };
+
+                    //OV carrito actual localStorage//
+                    let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+
+                    //Verificar producto carrito//
+                    const productoExistente = carrito.find(item => item.id === producto.id);
+                    if (productoExistente) {
+                        //Incrementar la cantidad existente//
+                        productoExistente.cantidad++;
+                    } else {
+                        //Agregar producto al carrito si no hay existencia//
+                        carrito.push(producto);
+                    }
+
+                    //Guardar el carrito actual localStorage
+                    localStorage.setItem('carrito', JSON.stringify(carrito));
+
+                    //Mostrar un mensaje en la consola//
+                    console.log('Producto añadido al carrito:', producto);
+
+                    //Actualizar contador del carrito//
+                    actualizarContadorCarrito();
+                });
+            });
+
+            //actualizar el contador del carrito en la interfaz//
+            function actualizarContadorCarrito() {
+                const carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+                const contador = carrito.reduce((total, item) => total + item.cantidad, 0);
+                document.getElementById('carrito-count').textContent = contador;
+            }
+
+            //Inicializar el contador del carrito//
+            actualizarContadorCarrito();
         });
     </script>
     <div>
@@ -368,7 +431,7 @@
                 </div>
                 <div class="col-md-4">
                     <p><strong>Correo Electrónico:</strong> BethelCel96@gmail.com</p>
-                    <p><strong>Horario de Atención:</strong> Lunes a Viernes 9:00 AM - 6:00 PM</p>
+                    <p><strong>Horario de Atención:</strong> Lunes a Viernes 8:00 AM - 20:00 PM</p>
                 </div>
                 <div class="col-md-4">
                     <p><strong>Contato Directo:</strong>
@@ -379,7 +442,7 @@
 
         </div>
     </footer>
-    <!--Final-->
+    <!--F-->
     <footer class="bg-black text-white py-6">
         <div class="container mx-auto text-center">
             <p> "Tecnología que funciona, confianza que dura Bethel Cel."</p>
