@@ -1,11 +1,10 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
 
 /*font-family: "Bebas Neue", serif;*/
 
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -87,7 +86,10 @@ body {
     margin-bottom: 45px;
 }
 
-.header-txt h1, span, h3 { /*R.MOVIL*/
+.header-txt h1,
+span,
+h3 {
+    /*R.MOVIL*/
     font-size: 80px;
     letter-spacing: 5px;
     text-transform: uppercase;
@@ -96,20 +98,23 @@ body {
     margin-bottom: 15px;
 }
 
-.header-txt span { /*QUITO*/
+.header-txt span {
+    /*QUITO*/
     font-size: 35px;
 
 }
 
 .header-txt p {
-    color: #FFFFFF; /*Diseno parrafo presentacion*/
+    color: #FFFFFF;
+    /*Diseno parrafo presentacion*/
     padding: 0 250px;
     margin: 25px 0;
     font-weight: bold;
 }
 
 .btn-1 {
-    display: inline-block; /*Boton informacion*/
+    display: inline-block;
+    /*Boton informacion*/
     padding: 11px 25px;
     background-color: #d82e37;
     color: #FFFFFF;
@@ -125,14 +130,16 @@ body {
     background-color: #b4272e;
 }
 
-.header-dir {  /*Posicion horizontal dir-horar etc*/
+.header-dir {
+    /*Posicion horizontal dir-horar etc*/
     display: flex;
     justify-content: space-between;
     text-align: center;
     margin-top: 20px;
 }
 
-.dir h3 { /*Tamano/letra datos en horizontal */
+.dir h3 {
+    /*Tamano/letra datos en horizontal */
     font-size: 30px;
     font-weight: bold;
     text-decoration: underline;
@@ -145,7 +152,7 @@ body {
     font-weight: bold;
 }
 
-.Bienvenido{
+.Bienvenido {
     display: flex;
 }
 
@@ -197,7 +204,8 @@ p {
 }
 
 hr {
-    border: 1px solid #cf2d3a;   /*linea roja debajo*/
+    border: 1px solid #cf2d3a;
+    /*linea roja debajo*/
     width: 80px;
 }
 
@@ -210,17 +218,24 @@ hr {
     justify-content: space-between;
     margin: 45px 0;
 }
+
 .services-1 img {
     display: block;
-    margin: 0 auto; /*Centrar horizontalmente*/
-    width: 50px; /*Ajusta el tamaño según sea necesario*/
-    height: auto; /*Mantén la proporción de la imagen*/
+    margin: 0 auto;
+    /*Centrar horizontalmente*/
+    width: 50px;
+    /*Ajusta el tamaño según sea necesario*/
+    height: auto;
+    /*Mantén la proporción de la imagen*/
 }
+
 .personal-1 {
     display: flex;
     flex-direction: column;
-    align-items: center; /*Centra horizontalmente*/
-    text-align: center; /*Centra el texto dentro del contenedor*/
+    align-items: center;
+    /*Centra horizontalmente*/
+    text-align: center;
+    /*Centra el texto dentro del contenedor*/
 }
 
 
@@ -241,7 +256,7 @@ hr {
     color: #FFFFFF;
 }
 
-.services-1 a {              
+.services-1 a {
     color: #cf2d3a;
     font-size: 16px;
 }
@@ -310,6 +325,7 @@ td {
 .personal-1 {
     text-align: center;
 }
+
 .personal-1 img {
     width: 250px;
     border-radius: 15px;
@@ -371,7 +387,123 @@ textarea {
     background-color: #070707;
 }
 
+@media screen and (max-width: 600px) {
+    body {
+        font-size: 14px;
+    }
+
+    .header {
+        min-height: 50vh;
+    }
+
+    .header-txt h1,
+    .header-txt span,
+    .header-txt h3 {
+        font-size: 40px;
+        /* Reducir tamaño de texto en el header */
+    }
+
+    .header-txt p {
+        padding: 0 20px;
+        /* Reducir espacio alrededor del texto */
+        font-size: 16px;
+    }
+
+    .header-dir {
+        flex-direction: column;
+        /* Cambiar de horizontal a vertical */
+        gap: 20px;
+        /* Espaciado entre elementos */
+        text-align: center;
+    }
+
+    .Bienvenido {
+        flex-direction: column;
+        /* Cambiar disposición de los elementos */
+    }
+
+    .Bienvenido-1,
+    .Bienvenido-2 {
+        width: 100%;
+        /* Ocupan todo el ancho */
+        padding: 20px;
+    }
+
+    .services-group,
+    .personal-group {
+        flex-direction: column;
+        /* Elementos en columna */
+        align-items: center;
+    }
+
+    .services-1,
+    .personal-1 {
+        margin-bottom: 20px;
+        /* Espacio entre secciones */
+    }
+
+    .btn-1 {
+        font-size: 14px;
+        padding: 10px 15px;
+    }
+
+    .campo,
+    textarea {
+        width: 90%;
+        /* Ajustar ancho de inputs */
+    }
+}
 
 
+@media screen and (min-width: 601px) and (max-width: 1024px) {
+
+    .header-txt h1,
+    .header-txt span,
+    .header-txt h3 {
+        font-size: 60px;
+    }
+
+    .header-txt p {
+        padding: 0 50px;
+    }
+
+    .Bienvenido-1,
+    .Bienvenido-2 {
+        padding: 50px;
+    }
+
+    .services-group,
+    .personal-group {
+        flex-wrap: wrap;
+        
+        justify-content: center;
+        gap: 20px;
+        
+    }
+
+    .services-1,
+    .personal-1 {
+        width: 45%;
+        
+    }
+
+    .campo,
+    textarea {
+        width: 80%;
+        
+    }
+}
 
 
+@media screen and (min-width: 1025px) {
+    .container {
+        max-width: 1200px;
+        
+    }
+
+    .services-group,
+    .personal-group {
+        justify-content: space-between;
+        
+    }
+}
