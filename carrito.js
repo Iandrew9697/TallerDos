@@ -5,8 +5,8 @@ document.addEventListener('DOMContentLoaded', () => {
     botonesComprar.forEach(boton => {
         boton.addEventListener('click', agregarAlCarrito);
     });
-    actualizarCarritoUI();
-});
+    actualizarCarritoUI(); 
+}); //
 
 function agregarAlCarrito(event) {
     const productoElemento = event.target.closest('.bg-black');
@@ -31,7 +31,7 @@ function agregarAlCarrito(event) {
     localStorage.setItem('carrito', JSON.stringify(carrito));
     alert(`¡${nombre} agregado al carrito!`);
     actualizarCarritoUI();
-}
+} //
 
 
 function actualizarCarritoUI() {
@@ -66,7 +66,8 @@ function actualizarCarritoUI() {
                 </button>
             `;
             listaCarrito.appendChild(li);
-        });
+        }); //
+
         function cargarCarrito() {
             const carrito = JSON.parse(localStorage.getItem('carrito')) || [];
             const listaCarrito = document.getElementById('lista-carrito');
